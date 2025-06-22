@@ -82,7 +82,7 @@ def add_to_database(chunks: list[Document]):
         # and the path to the chroma database directory
         vector_db = Chroma(
             collection_name="mtg_docs",
-            embedding_function=OllamaEmbeddings(model="llama3.2"),
+            embedding_function=OllamaEmbeddings(model="mxbai-embed-large"),
             persist_directory=chroma_path
         )
         # create unique IDs for each chunk
@@ -101,7 +101,7 @@ def add_to_database(chunks: list[Document]):
         # If the chroma database directory already exists, we load the existing database
         vector_db = Chroma(
             collection_name="mtg_docs",
-            embedding_function=OllamaEmbeddings(model="llama3.2"),
+            embedding_function=OllamaEmbeddings(model="mxbai-embed-large"),
             persist_directory=chroma_path
         )
 

@@ -1,3 +1,6 @@
 mtg-llm-env/
 chroma_db/
 __pycache__/
+vector_database_v2.py
+chunker.py
+debugger.py
