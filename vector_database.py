@@ -8,7 +8,7 @@ import os
 folder_path = "data/"
 chroma_path = "chroma_db/"
 
-def load_documents(fodler_path: str):
+def load_documents(folder_path: str):
     """Load documents from a directory."""
     loader = PyPDFDirectoryLoader(folder_path)
     return loader.load()
@@ -67,6 +67,12 @@ def create_chunk_ids(chunks: list[Document]):
     # once all chunks have been processed, we return the updated list of chunks
     return chunks
 
+# checking out the chunks to see how they look
+# updated_chunks = create_chunk_ids(chunks)
+
+# for chunk in updated_chunks:
+#     print(f"{chunk}\n")
+
 def add_to_database(chunks: list[Document]):
     # Check if the chroma database directory exists, if not, create it
     if not os.path.exists(chroma_path):
@@ -109,6 +115,6 @@ vector_db = add_to_database(chunks)
 # this will allow us to query the database for relevant chunks based on a search query
 retriever = vector_db.as_retriever(
     search_kwargs={
-        "k": 5
+        "k": 20
     }
 )
