@@ -4,3 +4,5 @@ __pycache__/
 vector_database_v2.py
 chunker.py
 debugger.py
+split_pdf.py
+original_data/
